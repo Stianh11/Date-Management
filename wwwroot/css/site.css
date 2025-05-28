@@ -1,0 +1,110 @@
+html {
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin: 0;
+    padding-bottom: 60px;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+}
+
+.navbar-logo {
+    width: 40px;
+    margin-right: .5rem;
+}
+
+.brand-text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #258cfb;
+}
+
+.nav-link {
+    color: #333 !important;
+    font-size: 1.2rem;
+    padding: .5rem 1rem;
+    position: relative;
+    transition: color .2s;
+    font-weight: 400;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #258cfb !important;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #258cfb;
+    transition: width .2s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.logout-link {
+    color: #333;
+}
+
+.logout-link:hover {
+    color: #258cfb !important;
+}
+
+.navbar-text{
+    font-size: 1.1rem; 
+}
+
+.btn-primary,
+.btn-success {
+    background-color: #258cfb;
+    border-color: #258cfb;
+    color: #fff;
+    transition: background-color .2s, border-color .2s;
+    font-weight: bold;
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+    background-color: #3b5cd2 !important;
+    border-color: #3b5cd2 !important;
+}
+
+.btn:focus,
+.form-control:focus {
+    box-shadow: 0 0 0 .2rem rgba(37,140,251,.5) !important;
+}
+
+.card-header {
+    background-color: #3b5cd2;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    --bs-table-accent-bg: rgba(37,140,251,.05);
+}
+
+footer {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    font-size: .9rem;
+    padding: 1rem 0;
+    text-align: center;
+}

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Date_Management_Project.Models.Holiday>
+
+@{
+    ViewData["Title"] = "All Holidays";
+}
+<div class="card mb-4 shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h1 class="mb-0">All Holidays</h1>
+    </div>
+</div>
+
+<div class="card-body">
+    <div class="text-center mb-4">
+        <a asp-action="Create"
+           class="btn btn-primary btn-lg px-4 py-2">
+           Add Holiday
+        </a>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var h in Model)
+        {
+            <tr>
+                <td>
+                    @* If it’s a single-day holiday, just show that date.
+                   else show “Start – End” *@
+                    @if (h.StartDate == h.EndDate)
+                    {
+                        @h.StartDate.ToString("yyyy-MM-dd")
+                    }
+                    else
+                    {
+                        @($"{h.StartDate:yyyy-MM-dd} \u2013 {h.EndDate:yyyy-MM-dd}")
+                    }
+                </td>
+                <td>@h.Name</td>
+                <td>@h.CountryCode</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@h.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@h.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
